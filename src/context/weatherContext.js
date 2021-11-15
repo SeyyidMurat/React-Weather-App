@@ -12,7 +12,7 @@ const WeatherContextProvider = ({ children }) => {
 	
 		try {
 			const getWeatherData = async()=>{
-				const response = await fetch(`http://api.weatherapi.com/v1/forecast.json?key=5aecae61d3774b619ab181101211111&q=${country}&days=5&aqi=no&alerts=no`);
+				const response = await fetch(`https://api.weatherapi.com/v1/forecast.json?key=5aecae61d3774b619ab181101211111&q=${country}&days=5&aqi=no&alerts=no`);
 				const result = await response.json();
 				setData(result);
 			};
