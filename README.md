@@ -1,7 +1,7 @@
 
 You can view the project at the link below.
 
-
+https://weather-react-app-1.netlify.app/
 
 Technologies used in the project:
 
