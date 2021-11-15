@@ -1,0 +1,187 @@
+.weather {
+   display: grid;
+   grid-template-columns: minmax(320px, 450px) 3fr;
+
+   &__left {
+      height: 100vh;
+      background-image: linear-gradient(5deg, #1e213a 0.2%, #1e213a 0.2%),
+         url('../components/Cloud-background.png');
+      background-blend-mode: exclusion;
+      background-repeat: no-repeat;
+      background-position: 50% 15%;
+   }
+
+   &__right {
+      background: $primary-dark;
+      display: grid;
+      grid-template-columns: minmax(1rem, 22rem) 700px minmax(1rem, 22rem);
+      grid-template-rows: 6rem 1fr 6rem;
+      &-wrapper {
+         display: flex;
+         flex-direction: column;
+         grid-column: 2 / 3;
+         grid-row: 2 / 3;
+      }
+   }
+
+   &__cards-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(110px, 120px));
+      gap: 26px;
+      justify-content: center;
+   }
+
+   &__show {
+      position: relative;
+      height: 100%;
+      padding: 0 clamp(#{'1rem, 2vw, 2rem'});
+
+      &-container {
+         height: 100%;
+         text-align: center;
+         display: flex;
+         flex-direction: column;
+         justify-content: space-evenly;
+      }
+
+      &-title {
+         display: flex;
+         justify-content: space-between;
+         align-items: center;
+         color: $text-color;
+      }
+
+      &-status {
+         img {
+            width: 200px;
+            height: 200px;
+            object-fit: cover;
+         }
+      }
+
+      &-degree {
+         color: $text-color;
+         font-size: clamp(#{'4rem, (2vw + 6rem), 9rem'});
+
+         &::after {
+            content: '℃';
+            font-size: 3.5rem;
+            color: $text-light-gray;
+         }
+      }
+
+      &-desc {
+         color: $text-light-gray;
+         font-size: 2rem;
+         font-weight: 600;
+      }
+
+      &-date {
+         display: flex;
+         justify-content: center;
+         gap: 1rem;
+         color: $text-gray;
+         font-size: 1.125rem;
+      }
+
+      &-location {
+         color: $text-gray;
+         font-size: 1.125rem;
+      }
+   }
+
+   &__card {
+      padding: 1.125rem 1.625rem;
+      color: $text-color;
+      text-align: center;
+      background: $primary-light;
+
+      img {
+         width: 56px;
+         height: 62px;
+         object-fit: contain;
+         margin: 1.125rem 0;
+      }
+
+      &-footer {
+         display: flex;
+         gap: 1rem;
+         & > *:last-of-type {
+            color: $text-light-gray;
+         }
+      }
+   }
+
+   &__hight-title {
+      color: $text-color;
+      margin-top: 4.5rem;
+   }
+
+   &__hight-container {
+      margin-top: 2rem;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 328px));
+      gap: clamp(#{'1.5rem, 2vw, 3rem'});
+      justify-content: center;
+   }
+
+   &__hight-card {
+      color: $text-color;
+      text-align: center;
+      background: $primary-light;
+      min-height: 160px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      gap: 1.5rem;
+      padding: 1.5rem 1.5rem;
+
+      h4 {
+         font-weight: normal;
+      }
+
+      &-value {
+         font-size: 4rem;
+         font-weight: 600;
+         display: flex;
+         gap: 1rem;
+
+         span {
+            font-size: 2rem;
+            font-weight: 500;
+            align-self: flex-end;
+         }
+      }
+
+      &-wind {
+         width: 30px;
+         height: 30px;
+         border-radius: 50%;
+         background: $button-primary;
+         display: flex;
+         justify-content: center;
+         align-items: center;
+         font-size: 1.5rem;
+      }
+   }
+}
+
+@media (max-width: 1040px) {
+   .weather {
+      grid-template-columns: 1fr;
+   }
+
+   .weather__right {
+      grid-template-columns: 1fr;
+   }
+
+   .weather__right-wrapper {
+      grid-column: inherit;
+      gap: 2rem;
+   }
+
+   .weather__hight-title {
+      text-align: center;
+   }
+}

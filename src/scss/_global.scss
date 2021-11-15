@@ -1,0 +1,96 @@
+*,
+*::after,
+*::before {
+   box-sizing: border-box;
+}
+
+body {
+   margin: 0;
+   font-family: 'Raleway', sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+p {
+   margin: 0;
+}
+
+ul {
+   list-style: none;
+   padding: 0;
+   margin: 0;
+}
+
+button {
+   border: none;
+   background: transparent;
+   outline: none;
+   cursor: pointer;
+   color: currentColor;
+   font-size: 1rem;
+   font-family: inherit;
+   transition: opacity 150ms ease;
+   &:hover {
+      opacity: 0.7;
+   }
+}
+
+.main {
+   min-height: 100vh;
+}
+
+.btn {
+   padding: 0.625rem 1.125rem;
+   background: $button-primary;
+   box-shadow: 0px 4px 4px 0px #00000040;
+   &-icon {
+      width: 40px;
+      height: 40px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 1.4rem;
+      border-radius: 50%;
+      padding: 0;
+   }
+
+   &-search {
+      background: $button-second;
+      padding: 14px 19px;
+      color: $text-color;
+   }
+}
+
+.progress {
+   height: 8px;
+   border-radius: 0.25rem;
+   background: $text-color;
+   width: 100%;
+   position: relative;
+
+   &::after {
+      content: '%';
+      position: absolute;
+      right: 0;
+      top: 12px;
+      font-size: 12px;
+   }
+
+   &-unit {
+      position: absolute;
+      bottom: 10px;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      font-size: 12px;
+   }
+
+   &-value {
+      height: 100%;
+      background: $yellow-clr;
+      border-radius: 0.25rem;
+   }
+}
