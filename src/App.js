@@ -1,16 +1,10 @@
-import React,{ useContext } from 'react';
-import Layout from './components/Layout';
-import LoadingPage from './components/LoadingPage';
-import WeatherContainer from './components/WeatherContainer';
-import { WeatherContext } from './context/weatherContext';
+import React from 'react';
+import Main from './pages/Main';
+
 const App = () => {
-	const { data } = useContext(WeatherContext);
+
 	return (
-		<Layout>
-			{
-				data === null ?  <LoadingPage/>: <WeatherContainer/>
-			}			
-		</Layout>
+		<Main/>
 	);
 };
 
